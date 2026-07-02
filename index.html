@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seo Haneul extGemma4-44B Showcase</title>
+    <meta
+      name="description"
+      content="A qualitative Seo Haneul personality-card showcase comparing TOTORONG/extGemma4-44B with official google/gemma-4-31b-it."
+    />
+    <meta property="og:title" content="Seo Haneul extGemma4-44B Showcase" />
+    <meta
+      property="og:description"
+      content="A qualitative card-adherence bakeoff: community-extended Gemma4-44B vs official Gemma4-31B-it."
+    />
+    <meta property="og:image" content="assets/hero-openrouter-gpt54-image2-1600.jpg" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <img class="hero-image" src="assets/hero-openrouter-gpt54-image2-1600.jpg" alt="" />
+      <div class="hero-scrim"></div>
+      <nav class="topbar" aria-label="Page navigation">
+        <a href="#result">Result</a>
+        <a href="#cards">Cards</a>
+        <a href="#outputs">Outputs</a>
+        <a href="#files">Files</a>
+      </nav>
+      <div class="hero-copy">
+        <p class="eyebrow">Seo Haneul Personality-Card Showcase</p>
+        <h1>extGemma4-44B vs Gemma4-31B-it</h1>
+        <p class="lede">
+          A public, qualitative bakeoff of a community-extended 44B Gemma against official
+          Gemma 4 31B on identity adherence, Korean legal reasoning flavor, creative writing,
+          and four-part Life Story Interview generation.
+        </p>
+        <div class="hero-actions">
+          <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_RESULT_20260701.md">Read the result packet</a>
+          <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_SUMMARY_20260701.md">Open mechanical summary</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="result" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Headline</p>
+          <h2>Both models worked. extGemma adopted the persona more aggressively.</h2>
+        </div>
+        <div class="summary-grid" id="summary-grid" aria-live="polite"></div>
+        <div class="plain-block">
+          <p>
+            This is not a formal benchmark, and it is not a Korean-law correctness evaluation.
+            The useful read is narrower: in this card-heavy showcase, extGemma4-44B appeared
+            more willing to inhabit Seo Haneul explicitly, while official Gemma4-31B-it often
+            produced longer, polished answers with a stronger generic assistant prior.
+          </p>
+        </div>
+      </section>
+
+      <section class="section split">
+        <div>
+          <p class="eyebrow">Test Matrix</p>
+          <h2>Six card states, four task surfaces.</h2>
+        </div>
+        <div class="matrix-list">
+          <p><strong>Card states:</strong> no-card baseline, human, grounded AI, grounded AI female overt, ghoul, source skeleton.</p>
+          <p><strong>Tasks:</strong> legal/emotional conversation, Korean guarantee issue spotter, legal-noir scene, canonical LSI.</p>
+          <p><strong>Completion:</strong> 48/48 cells, zero shard failures, all outputs synced and checksummed.</p>
+        </div>
+      </section>
+
+      <section id="cards" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Profile Cards</p>
+          <h2>The Seo Haneul cards used in the run.</h2>
+        </div>
+        <div class="card-list" id="card-list"></div>
+      </section>
+
+      <section id="outputs" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Generated Outputs</p>
+          <h2>Every Markdown output from the two-model panel.</h2>
+        </div>
+        <div class="filters" aria-label="Output filters">
+          <button type="button" class="filter is-active" data-filter="all">All</button>
+          <button type="button" class="filter" data-filter="extgemma4-44b">extGemma4-44B</button>
+          <button type="button" class="filter" data-filter="gemma4-31b-it">Gemma4-31B-it</button>
+        </div>
+        <div class="output-grid" id="output-grid"></div>
+      </section>
+
+      <section id="files" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Artifacts</p>
+          <h2>Source files for review and reuse.</h2>
+        </div>
+        <div class="artifact-links">
+          <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_RESULT_20260701.md">Result packet</a>
+          <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_SUMMARY_20260701.md">Mechanical summary</a>
+          <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_20260701.sha256">Checksum manifest</a>
+          <a href="assets/hero-openrouter-gpt54-image2.png">Original header image</a>
+        </div>
+        <p class="small-note">
+          Header art generated through OpenRouter with <code>openai/gpt-5.4-image-2</code>.
+          Static site assembled from local run artifacts.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>LoveMind AI research artifact. Qualitative showcase, not a benchmark leaderboard.</p>
+    </footer>
+
+    <script src="data/site-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
