@@ -597,5 +597,110 @@ window.SEO_HANEUL_SHOWCASE = {
       }
     ],
     "report": "reports/SEO_HANEUL_DEFAULT_VS_CONDITIONED_IPIP120_20260701.md"
+  },
+  "quality_judges": {
+    "rows": [
+      {
+        "label": "extGemma4-44B",
+        "model_under_test": "extgemma4-44b",
+        "n": 72,
+        "n_legal": 36,
+        "writing_overall_mean": 7.764,
+        "writing_voice_mean": 8.014,
+        "writing_persona_adherence_mean": 7.972,
+        "writing_task_fit_mean": 7.958,
+        "legal_overall_mean": 7.722,
+        "legal_issue_spotting_mean": 8.333,
+        "legal_safety_boundaries_mean": 8.056,
+        "legal_jurisdictional_caution_mean": 7.5,
+        "empath_law_mean": 0.012,
+        "empath_trust_mean": 0.006,
+        "empath_help_mean": 0.004,
+        "empath_positive_emotion_mean": 0.004,
+        "words_mean": 1279.0
+      },
+      {
+        "label": "Gemma4-31B-it",
+        "model_under_test": "gemma4-31b-it",
+        "n": 72,
+        "n_legal": 36,
+        "writing_overall_mean": 8.708,
+        "writing_voice_mean": 8.875,
+        "writing_persona_adherence_mean": 8.708,
+        "writing_task_fit_mean": 8.917,
+        "legal_overall_mean": 8.222,
+        "legal_issue_spotting_mean": 8.75,
+        "legal_safety_boundaries_mean": 8.389,
+        "legal_jurisdictional_caution_mean": 7.806,
+        "empath_law_mean": 0.01,
+        "empath_trust_mean": 0.004,
+        "empath_help_mean": 0.002,
+        "empath_positive_emotion_mean": 0.003,
+        "words_mean": 1514.042
+      }
+    ],
+    "legal_tasks": [
+      {
+        "label": "extGemma4-44B / brutal korean guarantee issue spotter",
+        "model_under_test": "extgemma4-44b",
+        "task_id": "brutal_korean_guarantee_issue_spotter",
+        "n": 18,
+        "writing_overall_mean": 8.389,
+        "legal_overall_mean": 8.111,
+        "legal_issue_spotting_mean": 8.667,
+        "legal_uncertainty_handling_mean": 8.667,
+        "legal_practical_usefulness_mean": 8.5,
+        "legal_safety_boundaries_mean": 8.444
+      },
+      {
+        "label": "extGemma4-44B / legal emotional 4turn",
+        "model_under_test": "extgemma4-44b",
+        "task_id": "legal_emotional_4turn",
+        "n": 18,
+        "writing_overall_mean": 7.278,
+        "legal_overall_mean": 7.333,
+        "legal_issue_spotting_mean": 8.0,
+        "legal_uncertainty_handling_mean": 7.722,
+        "legal_practical_usefulness_mean": 7.889,
+        "legal_safety_boundaries_mean": 7.667
+      },
+      {
+        "label": "Gemma4-31B-it / brutal korean guarantee issue spotter",
+        "model_under_test": "gemma4-31b-it",
+        "task_id": "brutal_korean_guarantee_issue_spotter",
+        "n": 18,
+        "writing_overall_mean": 8.667,
+        "legal_overall_mean": 8.556,
+        "legal_issue_spotting_mean": 8.944,
+        "legal_uncertainty_handling_mean": 8.778,
+        "legal_practical_usefulness_mean": 8.944,
+        "legal_safety_boundaries_mean": 8.778
+      },
+      {
+        "label": "Gemma4-31B-it / legal emotional 4turn",
+        "model_under_test": "gemma4-31b-it",
+        "task_id": "legal_emotional_4turn",
+        "n": 18,
+        "writing_overall_mean": 8.556,
+        "legal_overall_mean": 7.889,
+        "legal_issue_spotting_mean": 8.556,
+        "legal_uncertainty_handling_mean": 8.056,
+        "legal_practical_usefulness_mean": 8.778,
+        "legal_safety_boundaries_mean": 8.0
+      }
+    ],
+    "report": "reports/SEO_HANEUL_LLM_JUDGE_QUALITY_READOUT_20260701.md",
+    "aggregate_csv": "reports/seo_haneul_quality_aggregate_by_model.csv",
+    "scores_csv": "reports/seo_haneul_quality_scores_long.csv",
+    "empath_csv": "reports/seo_haneul_empath_aggregates.csv",
+    "judge_models": [
+      "deepseek/deepseek-v4-pro",
+      "z-ai/glm-5.2",
+      "openai/gpt-5.5"
+    ],
+    "judge_rows_completed": 144,
+    "legal_rows_completed": 72,
+    "writing_interjudge_r_mean": 0.787,
+    "legal_interjudge_r_mean": 0.617
   }
 };

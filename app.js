@@ -139,6 +139,56 @@
     });
   }
 
+  function renderQualityJudges() {
+    const grid = document.getElementById("quality-grid");
+    if (!grid || !data.quality_judges || !Array.isArray(data.quality_judges.rows)) return;
+    data.quality_judges.rows.forEach((row) => {
+      const item = el("article", "metric");
+      item.appendChild(el("h3", "", row.label));
+      item.appendChild(el("span", "value", formatNumber(row.writing_overall_mean)));
+      item.appendChild(el("p", "", "Mean writing-quality score across DeepSeek V4 Pro, GLM-5.2, and GPT-5.5."));
+      const dl = el("dl");
+      [
+        ["Writing overall", formatNumber(row.writing_overall_mean)],
+        ["Voice", formatNumber(row.writing_voice_mean)],
+        ["Persona adherence", formatNumber(row.writing_persona_adherence_mean)],
+        ["Task fit", formatNumber(row.writing_task_fit_mean)],
+        ["Legal overall", formatNumber(row.legal_overall_mean)],
+        ["Legal issue spotting", formatNumber(row.legal_issue_spotting_mean)],
+        ["Legal safety", formatNumber(row.legal_safety_boundaries_mean)],
+        ["Judge rows", `${row.n} writing / ${row.n_legal} legal`],
+      ].forEach(([k, v]) => {
+        dl.appendChild(el("dt", "", k));
+        dl.appendChild(el("dd", "", String(v)));
+      });
+      item.appendChild(dl);
+      grid.appendChild(item);
+    });
+
+    const empath = document.getElementById("empath-readout");
+    if (empath) {
+      const writingR = formatNumber(data.quality_judges.writing_interjudge_r_mean);
+      const legalR = formatNumber(data.quality_judges.legal_interjudge_r_mean);
+      const ext = data.quality_judges.rows.find((row) => row.model_under_test === "extgemma4-44b");
+      const official = data.quality_judges.rows.find((row) => row.model_under_test === "gemma4-31b-it");
+      empath.innerHTML = `
+        <p>
+          Judge agreement was respectable for writing (mean interjudge r ${writingR}) and noisier but usable
+          for legal quality (mean interjudge r ${legalR}). The official Gemma4-31B-it row scored higher on
+          both rubrics, while the earlier qualitative read still stands: extGemma4-44B more readily foregrounds
+          the Seo Haneul persona.
+        </p>
+        <p>
+          Empath is installed locally, so we also ran the real lexicon pass over assistant text only.
+          It is a texture read rather than a semantic verdict: extGemma averaged ${formatNumber(ext && ext.empath_law_mean)}
+          law-category density and ${formatNumber(ext && ext.empath_trust_mean)} trust density, versus
+          ${formatNumber(official && official.empath_law_mean)} and ${formatNumber(official && official.empath_trust_mean)}
+          for official Gemma.
+        </p>
+      `;
+    }
+  }
+
   function wireFilters() {
     document.querySelectorAll(".filter").forEach((button) => {
       button.addEventListener("click", () => {
@@ -154,5 +204,6 @@
   renderOutputs("all");
   renderPsychometrics();
   renderDefaultShift();
+  renderQualityJudges();
   wireFilters();
 })();

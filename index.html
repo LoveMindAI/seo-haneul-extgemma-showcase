@@ -32,6 +32,7 @@
           <a href="#cards">Cards</a>
           <a href="#outputs">Outputs</a>
           <a href="#psychometrics">IPIP-NEO Read</a>
+          <a href="#quality">Judge Read</a>
         </div>
       </nav>
       <div class="hero-copy">
@@ -160,7 +161,25 @@
           </p>
         </div>
         <div class="summary-grid default-grid" id="default-shift-grid"></div>
+
+        <div id="quality" class="subsection-head">
+          <p class="eyebrow">LLM Judge Read</p>
+          <h2>Writing quality and legal-advice quality.</h2>
+        </div>
+        <div class="plain-block">
+          <p>
+            A second judge pass scored all 48 displayed outputs with DeepSeek V4 Pro,
+            GLM-5.2, and GPT-5.5. Every output received a writing-quality rubric; the
+            legal conversation and Korean guarantee tasks also received a legal-reasoning
+            and advice-safety rubric. This is still an LLM-as-judge read, not a formal
+            Korean-law correctness audit.
+          </p>
+        </div>
+        <div class="summary-grid quality-grid" id="quality-grid"></div>
+        <div class="plain-block compact-block" id="empath-readout"></div>
+
         <div class="hero-actions after-ipip-links">
+          <a href="reports/SEO_HANEUL_LLM_JUDGE_QUALITY_READOUT_20260701.md">LLM-judge quality report</a>
           <a href="https://lovemindai.github.io/gemma4-lsi-demo/">Gemma4 LSI demo</a>
           <a href="reports/SEO_HANEUL_DEFAULT_VS_CONDITIONED_IPIP120_20260701.md">Default-vs-conditioned report</a>
         </div>
