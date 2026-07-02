@@ -71,6 +71,42 @@
       });
   }
 
+  function formatNumber(value) {
+    if (value === null || value === undefined || Number.isNaN(Number(value))) return "n/a";
+    return Number(value).toFixed(3);
+  }
+
+  function renderPsychometrics() {
+    const grid = document.getElementById("psychometric-grid");
+    if (!grid || !data.psychometrics || !Array.isArray(data.psychometrics.rows)) return;
+    if (!data.psychometrics.rows.length) {
+      const item = el("article", "metric");
+      item.appendChild(el("h3", "", "Scoring queued"));
+      item.appendChild(el("p", "", "The IPIP-NEO 120 judge pass will appear here after the OpenRouter scoring run completes."));
+      grid.appendChild(item);
+      return;
+    }
+    data.psychometrics.rows.forEach((row) => {
+      const item = el("article", "metric");
+      item.appendChild(el("h3", "", row.label));
+      item.appendChild(el("span", "value", formatNumber(row.facet_r_mean)));
+      item.appendChild(el("p", "", "Mean card-to-LSI facet correlation across scored card states."));
+      const dl = el("dl");
+      [
+        ["Domain r", formatNumber(row.domain_r_mean)],
+        ["Facet r", formatNumber(row.facet_r_mean)],
+        ["Item r", formatNumber(row.item_r_mean)],
+        ["Mean facet MAE", formatNumber(row.facet_mae_mean)],
+        ["Judge", row.judge],
+      ].forEach(([k, v]) => {
+        dl.appendChild(el("dt", "", k));
+        dl.appendChild(el("dd", "", String(v)));
+      });
+      item.appendChild(dl);
+      grid.appendChild(item);
+    });
+  }
+
   function wireFilters() {
     document.querySelectorAll(".filter").forEach((button) => {
       button.addEventListener("click", () => {
@@ -84,6 +120,6 @@
   renderSummary();
   renderCards();
   renderOutputs("all");
+  renderPsychometrics();
   wireFilters();
 })();
-

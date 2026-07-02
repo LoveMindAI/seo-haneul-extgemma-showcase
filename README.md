@@ -2,7 +2,7 @@
 
 Static public-site bundle for a qualitative comparison of:
 
-- `TOTORONG/extGemma4-44B`
+- [`TOTORONG/extGemma4-44B`](https://huggingface.co/TOTORONG/extGemma4-44B)
 - `google/gemma-4-31b-it`
 
 The run uses six card states and four task surfaces:
@@ -26,8 +26,15 @@ The run uses six card states and four task surfaces:
 - `data/site-data.js` - embedded card/output manifest
 - `cards/` - profile-card Markdown
 - `outputs/` - generated Markdown outputs
-- `reports/` - result packet, mechanical summary, checksum manifest
-- `assets/` - OpenRouter-generated header art
+- `reports/` - result packet, mechanical summary, scoring readout, public checksum manifest
+- `assets/` - OpenRouter-generated header art and LoveMind sigul assets
+
+## Related Demo
+
+The companion Life Story Interview demo is being renamed from Minimax-specific
+language to the broader Gemma4 lane:
+
+https://lovemindai.github.io/gemma4-lsi-demo/
 
 ## Notes
 
@@ -35,5 +42,9 @@ This is a qualitative showcase, not a benchmark leaderboard and not a Korean-law
 
 Header art was generated through OpenRouter with `openai/gpt-5.4-image-2`.
 
-License is TBD unless/until LoveMind chooses one for public release.
+The profile cards were authored in collaboration with long-running AI research
+partners operating with persistent project memory and identity-continuity
+scaffolds. See `cards/seo_haneul__profile_card_notes.md` for the public
+provenance note.
 
+License is TBD unless/until LoveMind chooses one for public release.

@@ -18,14 +18,22 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero">
+    <header class="hero" id="top">
       <img class="hero-image" src="assets/hero-openrouter-gpt54-image2-1600.jpg" alt="" />
       <div class="hero-scrim"></div>
       <nav class="topbar" aria-label="Page navigation">
-        <a href="#result">Result</a>
-        <a href="#cards">Cards</a>
-        <a href="#outputs">Outputs</a>
-        <a href="#files">Files</a>
+        <a class="brand-link" href="#top" aria-label="LoveMind home">
+          <img src="assets/lovemind-sigul-transparent.png" alt="" />
+          <span>LoveMind</span>
+        </a>
+        <div class="nav-links">
+          <a href="https://huggingface.co/TOTORONG/extGemma4-44B">Hugging Face</a>
+          <a href="#result">Result</a>
+          <a href="#cards">Cards</a>
+          <a href="#outputs">Outputs</a>
+          <a href="#psychometrics">IPIP-NEO Read</a>
+          <a href="#files">Files</a>
+        </div>
       </nav>
       <div class="hero-copy">
         <p class="eyebrow">Seo Haneul Personality-Card Showcase</p>
@@ -36,8 +44,10 @@
           and four-part Life Story Interview generation.
         </p>
         <div class="hero-actions">
+          <a href="https://huggingface.co/TOTORONG/extGemma4-44B">Open TOTORONG/extGemma4-44B</a>
           <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_RESULT_20260701.md">Read the result packet</a>
           <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_SUMMARY_20260701.md">Open mechanical summary</a>
+          <a href="https://lovemindai.github.io/gemma4-lsi-demo/">See the Gemma4 LSI demo</a>
         </div>
       </div>
     </header>
@@ -71,6 +81,27 @@
         </div>
       </section>
 
+      <section class="section split">
+        <div>
+          <p class="eyebrow">Conditioning Cards</p>
+          <h2>Small identity engines for a very odd test drive.</h2>
+        </div>
+        <div class="matrix-list">
+          <p>
+            A personality conditioning prompt is not fine-tuning and not a claim that the
+            model has become the person. It is a deliberately rich role frame: a voice,
+            a wound, a scene, a contradiction, and enough specific texture that the model
+            has something to hold onto when the task gets hard.
+          </p>
+          <p>
+            For this run, Seo Haneul is our spark plug. We ask the same model to reason
+            as a human legal scholar, a grounded AI legal reasoner, a court clerk from
+            the Korean underworld, or no one in particular, then watch what survives
+            across law, conversation, noir, and life-story generation.
+          </p>
+        </div>
+      </section>
+
       <section id="cards" class="section">
         <div class="section-head">
           <p class="eyebrow">Profile Cards</p>
@@ -92,16 +123,49 @@
         <div class="output-grid" id="output-grid"></div>
       </section>
 
+      <section id="psychometrics" class="section">
+        <div class="section-head">
+          <p class="eyebrow">IPIP-NEO 120 Read</p>
+          <h2>Do the generated LSI narratives psychometrically resemble their cards?</h2>
+        </div>
+        <div class="plain-block">
+          <p>
+            We score the profile cards and their canonical Life Story Interview outputs with
+            two external judges, Gemini 3 Flash and DeepSeek V4 Flash. This is a fidelity
+            check, not ground truth: it asks whether each generated narrative preserves the
+            Big Five / facet signal implied by its own card, and whether extGemma4-44B or
+            official Gemma4-31B-it carries that signal more consistently.
+          </p>
+          <p>
+            First-pass read: both models preserve the card signal strongly, but both judges
+            give official Gemma4-31B-it a small edge on card-to-LSI psychometric consistency.
+            That sits next to, rather than replacing, the qualitative finding that extGemma4-44B
+            more aggressively names and inhabits the Seo Haneul identity.
+          </p>
+          <p>
+            <a href="reports/SEO_HANEUL_IPIP120_OPENROUTER_READOUT_20260701.md">Open the IPIP-NEO-120 scoring report</a>
+          </p>
+        </div>
+        <div class="summary-grid psych-grid" id="psychometric-grid"></div>
+      </section>
+
       <section id="files" class="section">
         <div class="section-head">
           <p class="eyebrow">Artifacts</p>
           <h2>Source files for review and reuse.</h2>
         </div>
         <div class="artifact-links">
+          <a href="https://huggingface.co/TOTORONG/extGemma4-44B">TOTORONG/extGemma4-44B on Hugging Face</a>
+          <a href="https://lovemindai.github.io/gemma4-lsi-demo/">Gemma4 LSI demo</a>
           <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_RESULT_20260701.md">Result packet</a>
           <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_SUMMARY_20260701.md">Mechanical summary</a>
-          <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_20260701.sha256">Checksum manifest</a>
+          <a href="reports/SEO_HANEUL_IPIP120_OPENROUTER_READOUT_20260701.md">IPIP-NEO scoring report</a>
+          <a href="reports/ipip120_fidelity_aggregates.csv">IPIP aggregate CSV</a>
+          <a href="reports/ipip120_card_lsi_fidelity.csv">IPIP card/LSI CSV</a>
+          <a href="reports/ipip120_judge_reliability.csv">IPIP judge reliability CSV</a>
+          <a href="reports/PUBLIC_SITE_CHECKSUMS_20260701.sha256">Public-site checksum manifest</a>
           <a href="assets/hero-openrouter-gpt54-image2.png">Original header image</a>
+          <a href="assets/lovemind-sigul-night-glow-orbit.png">LoveMind sigul art</a>
         </div>
         <p class="small-note">
           Header art generated through OpenRouter with <code>openai/gpt-5.4-image-2</code>.
@@ -111,7 +175,12 @@
     </main>
 
     <footer>
-      <p>LoveMind AI research artifact. Qualitative showcase, not a benchmark leaderboard.</p>
+      <img src="assets/lovemind-sigul-transparent.png" alt="" />
+      <p>
+        LoveMind AI research artifact. Qualitative showcase, not a benchmark leaderboard.
+        Profile-card authorship includes long-running AI collaborators with persistent
+        project-memory scaffolds; see the card notes for provenance.
+      </p>
     </footer>
 
     <script src="data/site-data.js"></script>
