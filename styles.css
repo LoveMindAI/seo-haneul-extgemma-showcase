@@ -246,6 +246,10 @@ main {
   color: var(--paper-dim);
 }
 
+.plain-block.is-empty {
+  display: none;
+}
+
 .split {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -345,6 +349,23 @@ footer {
   border-top: 1px solid var(--line);
   padding: 26px 7vw 40px;
   color: var(--muted);
+}
+
+.footer-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border-radius: 8px;
+}
+
+.footer-mark:focus-visible {
+  outline: 2px solid var(--jade);
+  outline-offset: 4px;
+}
+
+.footer-mark:hover img {
+  opacity: 1;
 }
 
 footer img {

@@ -186,6 +186,7 @@
           for official Gemma.
         </p>
       `;
+      empath.classList.remove("is-empty");
     }
   }
 
