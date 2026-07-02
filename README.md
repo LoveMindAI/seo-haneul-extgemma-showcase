@@ -29,13 +29,6 @@ The run uses six card states and four task surfaces:
 - `reports/` - result packet, mechanical summary, scoring readout, public checksum manifest
 - `assets/` - OpenRouter-generated header art and LoveMind sigul assets
 
-## Related Demo
-
-The companion Life Story Interview demo is being renamed from Minimax-specific
-language to the broader Gemma4 lane:
-
-https://lovemindai.github.io/gemma4-lsi-demo/
-
 ## Notes
 
 This is a qualitative showcase, not a benchmark leaderboard and not a Korean-law correctness evaluation.

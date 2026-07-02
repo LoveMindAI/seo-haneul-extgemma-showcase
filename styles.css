@@ -95,7 +95,6 @@ a {
 
 .topbar a,
 .hero-actions a,
-.artifact-links a,
 .filter {
   min-height: 40px;
   display: inline-flex;
@@ -111,7 +110,6 @@ a {
 
 .topbar a:hover,
 .hero-actions a:hover,
-.artifact-links a:hover,
 .filter:hover,
 .filter.is-active {
   border-color: rgba(114, 185, 162, 0.62);
@@ -162,12 +160,15 @@ h3 {
 }
 
 .hero-actions,
-.artifact-links,
 .filters {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 28px;
+}
+
+.after-ipip-links {
+  margin-top: 18px;
 }
 
 main {
@@ -186,9 +187,14 @@ main {
   margin-bottom: 30px;
 }
 
+.subsection-head {
+  margin: 52px 0 24px;
+}
+
 .summary-grid,
 .output-grid,
-.psych-grid {
+.psych-grid,
+.default-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
@@ -385,6 +391,7 @@ footer p {
   .summary-grid,
   .output-grid,
   .psych-grid,
+  .default-grid,
   .split {
     grid-template-columns: 1fr;
   }

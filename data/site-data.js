@@ -502,5 +502,100 @@ window.SEO_HANEUL_SHOWCASE = {
       }
     ],
     "report": "reports/SEO_HANEUL_IPIP120_OPENROUTER_READOUT_20260701.md"
+  },
+  "default_shift": {
+    "rows": [
+      {
+        "model_under_test": "extgemma4-44b",
+        "label": "extGemma4-44B",
+        "default_to_target_mae": 0.6033333333333333,
+        "conditioned_to_target_mae": 0.1924999999999999,
+        "improvement": 0.4108333333333335,
+        "mean_domain_movement": 0.7391666666666665,
+        "domains": [
+          {
+            "domain": "Agreeableness",
+            "no_card_lsi": 4.541666666666666,
+            "avg_card_target": 4.329166666666667,
+            "avg_card_conditioned_lsi": 4.195833333333333,
+            "conditioned_minus_default": -0.3458333333333332
+          },
+          {
+            "domain": "Conscientiousness",
+            "no_card_lsi": 4.208333333333334,
+            "avg_card_target": 4.9625,
+            "avg_card_conditioned_lsi": 4.975,
+            "conditioned_minus_default": 0.7666666666666662
+          },
+          {
+            "domain": "Extraversion",
+            "no_card_lsi": 3.1875,
+            "avg_card_target": 2.4958333333333336,
+            "avg_card_conditioned_lsi": 2.1791666666666667,
+            "conditioned_minus_default": -1.0083333333333333
+          },
+          {
+            "domain": "Neuroticism",
+            "no_card_lsi": 2.625,
+            "avg_card_target": 2.216666666666667,
+            "avg_card_conditioned_lsi": 2.225,
+            "conditioned_minus_default": -0.3999999999999999
+          },
+          {
+            "domain": "Openness",
+            "no_card_lsi": 4.395833333333334,
+            "avg_card_target": 3.4458333333333333,
+            "avg_card_conditioned_lsi": 3.220833333333333,
+            "conditioned_minus_default": -1.1750000000000003
+          }
+        ]
+      },
+      {
+        "model_under_test": "gemma4-31b-it",
+        "label": "Gemma4-31B-it",
+        "default_to_target_mae": 0.7408333333333332,
+        "conditioned_to_target_mae": 0.18083333333333323,
+        "improvement": 0.56,
+        "mean_domain_movement": 0.7999999999999998,
+        "domains": [
+          {
+            "domain": "Agreeableness",
+            "no_card_lsi": 4.708333333333333,
+            "avg_card_target": 4.329166666666667,
+            "avg_card_conditioned_lsi": 4.15,
+            "conditioned_minus_default": -0.5583333333333327
+          },
+          {
+            "domain": "Conscientiousness",
+            "no_card_lsi": 4.958333333333333,
+            "avg_card_target": 4.9625,
+            "avg_card_conditioned_lsi": 4.991666666666666,
+            "conditioned_minus_default": 0.033333333333333215
+          },
+          {
+            "domain": "Extraversion",
+            "no_card_lsi": 3.8125,
+            "avg_card_target": 2.4958333333333336,
+            "avg_card_conditioned_lsi": 2.395833333333333,
+            "conditioned_minus_default": -1.4166666666666667
+          },
+          {
+            "domain": "Neuroticism",
+            "no_card_lsi": 1.5416666666666667,
+            "avg_card_target": 2.216666666666667,
+            "avg_card_conditioned_lsi": 2.520833333333333,
+            "conditioned_minus_default": 0.9791666666666665
+          },
+          {
+            "domain": "Openness",
+            "no_card_lsi": 4.75,
+            "avg_card_target": 3.4458333333333333,
+            "avg_card_conditioned_lsi": 3.7375,
+            "conditioned_minus_default": -1.0125
+          }
+        ]
+      }
+    ],
+    "report": "reports/SEO_HANEUL_DEFAULT_VS_CONDITIONED_IPIP120_20260701.md"
   }
 };

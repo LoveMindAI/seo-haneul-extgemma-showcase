@@ -22,7 +22,7 @@
       <img class="hero-image" src="assets/hero-openrouter-gpt54-image2-1600.jpg" alt="" />
       <div class="hero-scrim"></div>
       <nav class="topbar" aria-label="Page navigation">
-        <a class="brand-link" href="#top" aria-label="LoveMind home">
+        <a class="brand-link" href="https://lovemind.ai" aria-label="LoveMind home">
           <img src="assets/lovemind-sigul-transparent.png" alt="" />
           <span>LoveMind</span>
         </a>
@@ -32,14 +32,13 @@
           <a href="#cards">Cards</a>
           <a href="#outputs">Outputs</a>
           <a href="#psychometrics">IPIP-NEO Read</a>
-          <a href="#files">Files</a>
         </div>
       </nav>
       <div class="hero-copy">
         <p class="eyebrow">Seo Haneul Personality-Card Showcase</p>
         <h1>extGemma4-44B vs Gemma4-31B-it</h1>
         <p class="lede">
-          A public, qualitative bakeoff of a community-extended 44B Gemma against official
+          A qualitative bakeoff of a community-extended 44B Gemma against official
           Gemma 4 31B on identity adherence, Korean legal reasoning flavor, creative writing,
           and four-part Life Story Interview generation.
         </p>
@@ -47,7 +46,6 @@
           <a href="https://huggingface.co/TOTORONG/extGemma4-44B">Open TOTORONG/extGemma4-44B</a>
           <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_RESULT_20260701.md">Read the result packet</a>
           <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_SUMMARY_20260701.md">Open mechanical summary</a>
-          <a href="https://lovemindai.github.io/gemma4-lsi-demo/">See the Gemma4 LSI demo</a>
         </div>
       </div>
     </header>
@@ -147,30 +145,25 @@
           </p>
         </div>
         <div class="summary-grid psych-grid" id="psychometric-grid"></div>
-      </section>
 
-      <section id="files" class="section">
-        <div class="section-head">
-          <p class="eyebrow">Artifacts</p>
-          <h2>Source files for review and reuse.</h2>
+        <div class="subsection-head">
+          <p class="eyebrow">Default vs Conditioned</p>
+          <h2>What changed from the no-card personality read?</h2>
         </div>
-        <div class="artifact-links">
-          <a href="https://huggingface.co/TOTORONG/extGemma4-44B">TOTORONG/extGemma4-44B on Hugging Face</a>
+        <div class="plain-block">
+          <p>
+            The no-card LSI is not a neutral blank. Both models default toward a very capable,
+            prosocial assistant shape: high Agreeableness, high Conscientiousness, high Openness,
+            and model-specific Extraversion/Neuroticism. Seo Haneul conditioning pulls the
+            generated narratives away from that baseline toward a more restrained, less extraverted,
+            less novelty-forward legal reasoner.
+          </p>
+        </div>
+        <div class="summary-grid default-grid" id="default-shift-grid"></div>
+        <div class="hero-actions after-ipip-links">
           <a href="https://lovemindai.github.io/gemma4-lsi-demo/">Gemma4 LSI demo</a>
-          <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_RESULT_20260701.md">Result packet</a>
-          <a href="reports/EXTGEMMA_VS_GEMMA31_SHOWCASE_SUMMARY_20260701.md">Mechanical summary</a>
-          <a href="reports/SEO_HANEUL_IPIP120_OPENROUTER_READOUT_20260701.md">IPIP-NEO scoring report</a>
-          <a href="reports/ipip120_fidelity_aggregates.csv">IPIP aggregate CSV</a>
-          <a href="reports/ipip120_card_lsi_fidelity.csv">IPIP card/LSI CSV</a>
-          <a href="reports/ipip120_judge_reliability.csv">IPIP judge reliability CSV</a>
-          <a href="reports/PUBLIC_SITE_CHECKSUMS_20260701.sha256">Public-site checksum manifest</a>
-          <a href="assets/hero-openrouter-gpt54-image2.png">Original header image</a>
-          <a href="assets/lovemind-sigul-night-glow-orbit.png">LoveMind sigul art</a>
+          <a href="reports/SEO_HANEUL_DEFAULT_VS_CONDITIONED_IPIP120_20260701.md">Default-vs-conditioned report</a>
         </div>
-        <p class="small-note">
-          Header art generated through OpenRouter with <code>openai/gpt-5.4-image-2</code>.
-          Static site assembled from local run artifacts.
-        </p>
       </section>
     </main>
 

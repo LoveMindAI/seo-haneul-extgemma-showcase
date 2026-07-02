@@ -107,6 +107,38 @@
     });
   }
 
+  function signed(value) {
+    if (value === null || value === undefined || Number.isNaN(Number(value))) return "n/a";
+    const num = Number(value);
+    return `${num >= 0 ? "+" : ""}${num.toFixed(2)}`;
+  }
+
+  function renderDefaultShift() {
+    const grid = document.getElementById("default-shift-grid");
+    if (!grid || !data.default_shift || !Array.isArray(data.default_shift.rows)) return;
+    data.default_shift.rows.forEach((row) => {
+      const item = el("article", "metric shift-card");
+      item.appendChild(el("h3", "", row.label));
+      item.appendChild(el("span", "value", formatNumber(row.improvement)));
+      item.appendChild(el("p", "", "Mean Big Five distance-to-card improvement from no-card LSI to card-conditioned LSI."));
+      const dl = el("dl");
+      [
+        ["Default to card MAE", formatNumber(row.default_to_target_mae)],
+        ["Conditioned to card MAE", formatNumber(row.conditioned_to_target_mae)],
+        ["Mean domain movement", formatNumber(row.mean_domain_movement)],
+      ].forEach(([k, v]) => {
+        dl.appendChild(el("dt", "", k));
+        dl.appendChild(el("dd", "", String(v)));
+      });
+      row.domains.forEach((domain) => {
+        dl.appendChild(el("dt", "", domain.domain));
+        dl.appendChild(el("dd", "", signed(domain.conditioned_minus_default)));
+      });
+      item.appendChild(dl);
+      grid.appendChild(item);
+    });
+  }
+
   function wireFilters() {
     document.querySelectorAll(".filter").forEach((button) => {
       button.addEventListener("click", () => {
@@ -121,5 +153,6 @@
   renderCards();
   renderOutputs("all");
   renderPsychometrics();
+  renderDefaultShift();
   wireFilters();
 })();
